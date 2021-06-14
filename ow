@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#Command Line Wizardry
+#commandlinewizardry.com
+
+#Overwrite
+#Version 1.0
+
+if [ $# == 0 ] 
+then
+	echo "$0: Output file name required"
+	exit 1
+fi
+
+out=""
+
+while IFS= read LineIn
+do
+	out="$out$LineIn\n"
+done
+
+echo -en $out > $1
